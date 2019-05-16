@@ -13,4 +13,4 @@ Download the Installer here: https://drive.google.com/open?id=1JYO_QlmCw3iEDfYTs
   6. imutils (Version==0.5.2)
   7. glob2 (Version==0.6)
   
-##### # Note: Before running the source code comment "from fbs_runtime.application_context import ApplicationContext". This is a Library for creating Installer
+##### # Note: Before running the source code, comment this line "from fbs_runtime.application_context import ApplicationContext". This is a Library for creating Installers.
