@@ -7179,7 +7179,7 @@ class Ui_IPCVToolBox(object):
                     if not ret:
                         break
                     # Median
-                    median = cv.medianBlur(frame,(k,k))
+                    median = cv.medianBlur(frame,k)
                     out.write(median)
                     cv.imshow('Median Blur', median)
                     if cv.waitKey(1) == ord('s'):
@@ -7203,7 +7203,7 @@ class Ui_IPCVToolBox(object):
                     if not ret:
                         break
                     # Median
-                    median = cv.medianBlur(frame,(k,k))
+                    median = cv.medianBlur(frame,k)
                     # Display the resulting frame
                     cv.imshow('Median Blur', median)
                     if cv.waitKey(1) == ord('q'):
@@ -7833,7 +7833,7 @@ class Ui_IPCVToolBox(object):
             msgBox.setStyleSheet("QLabel{min-width:300 px; font-size: 16px;} QPushButton{ width:100px; font-size:12px; }")
             msgBox.setText("Image Folder Selected")
             msgBox.exec_()
-            self.CalibrateButton.setEnabled(True)
+            self.StitchImagesButton.setEnabled(True)
         else:
             # Show the Message
             msgBox = QMessageBox()
@@ -7982,6 +7982,7 @@ class Ui_IPCVToolBox(object):
             msgBox.setText("Eye Pre-trained Classifier Loaded")
             msgBox.exec_()
             self.LoadFaceImageButton.setEnabled(True)
+            self.CaptureFaceImageButton.setEnabled(True)
         else:
             # Show the Message
             msgBox = QMessageBox()
