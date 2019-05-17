@@ -8219,16 +8219,16 @@ class Ui_IPCVToolBox(object):
         fileName, _ = QFileDialog.getOpenFileName(IPCVToolBox,"Select an Image","","Image Files (*.jpg *.jpeg *.JPG *.tif *.tiff *.png *.bmp)", options=options)
         # Read the Image
         img = cv.imread(fileName)
-        img = cv.resize(img,(512,512),interpolation = cv.INTER_AREA)
-        global FaceR
-        FaceR = img
-        if FaceR is not None:
+        if img is not None:
             # Show the Message
             msgBox = QMessageBox()
             msgBox.setStyleSheet("QLabel{min-width:300 px; font-size: 16px;} QPushButton{ width:100px; font-size:12px; }")
             msgBox.setText("Image Loaded Successfully")
             msgBox.exec_()
             self.RecognizeFaceButton.setEnabled(True)
+            img = cv.resize(img,(512,512),interpolation = cv.INTER_AREA)
+            global FaceR
+            FaceR = img
         else:
             # Show the Message
             msgBox = QMessageBox()
